@@ -1,0 +1,22 @@
+{
+  "format": "atelier-product",
+  "version": 6,
+  "product": "rolltop-pack",
+  "units": "mm",
+  "parameters": {
+    "kind": "rolltop-pack",
+    "thickness": 1.5,
+    "allowance": 0,
+    "stitchOffset": 4,
+    "sewingMode": "hand",
+    "stitchPitch": 4,
+    "holeDiameter": 0.8,
+    "color": "#53634a",
+    "width": 270,
+    "height": 330,
+    "depth": 110,
+    "rollLength": 160,
+    "strapLength": 850,
+    "strapWidth": 30
+  }
+}

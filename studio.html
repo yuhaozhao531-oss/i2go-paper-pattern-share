@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="i2GO 数字打样台：一句话生成背包 3D 数字样、纸格草稿（1:1 SVG/DXF）与物料清单。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b1c1b'/%3E%3Ctext x='32' y='40' font-family='Arial' font-size='21' font-weight='700' fill='%23f4f1ea' text-anchor='middle'%3Ei2GO%3C/text%3E%3C/svg%3E" />
+  <title>i2GO / 数字打样台</title>
+  <link rel="stylesheet" href="./styles-studio.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+</head>
+<body class="studio-body">
+  <header class="studio-header">
+    <div class="s-brand">
+      <a href="./" class="s-logo">i2GO</a>
+      <span class="s-divider"></span>
+      <span class="s-product">数字打样台</span>
+      <span class="s-badge">INDUSTRIAL</span>
+    </div>
+    <nav class="mode-tabs" role="tablist" aria-label="工作区">
+      <button class="mode is-active" data-tab="model" role="tab" aria-selected="true">3D 数字样</button>
+      <button class="mode" data-tab="pattern" role="tab" aria-selected="false">纸格 / PATTERN</button>
+      <button class="mode" data-tab="tech" role="tab" aria-selected="false">工业工艺单</button>
+      <button class="mode" data-tab="bom" role="tab" aria-selected="false">物料 BOM</button>
+    </nav>
+    <div class="s-actions">
+      <span class="save-state" id="saveState">本地生成 · 不上传</span>
+      <a class="s-btn ghost" href="./poc.html">Pattern Lab</a>
+      <button class="s-btn ghost" id="exportPattern">纸格 SVG</button>
+      <button class="s-btn primary" id="exportGlb">导出 GLB</button>
+    </div>
+  </header>
+
+  <main class="studio-main">
+    <aside class="builder">
+      <div class="builder-intro">
+        <p class="b-kicker"><span>ONE-LINE BRIEF</span><span>01 / 输入</span></p>
+        <h1>一句话，出一个<br /><em>能看的数字样</em></h1>
+        <p class="b-lead">写清尺寸、场景、部件和颜色。系统同步生成 3D 数字样、纸格草稿和物料概要。</p>
+        <div class="brief-box">
+          <textarea id="briefInput" rows="3" spellcheck="false">43×32×18 城市通勤背包，前袋+电脑仓，石墨灰</textarea>
+          <button id="buildBrief">生成数字样 <span>→</span></button>
+        </div>
+        <div class="chips" id="parseChips" aria-live="polite"></div>
+        <div class="notes" id="parseNotes"></div>
+        <div class="example-row" aria-label="示例">
+          <button data-example="43×32×18 城市通勤背包，前袋+电脑仓，石墨灰">通勤</button>
+          <button data-example="轻量 39×28×14 日用双肩包，电脑仓，黑色">轻量</button>
+          <button data-example="户外 52×30×22 徒步背包，侧袋+胸扣，苔原绿">徒步</button>
+        </div>
+      </div>
+
+      <div class="builder-rest">
+        <section class="builder-section">
+        <div class="b-head"><span>款式模板</span><span>03 TEMPLATES</span></div>
+        <div class="preset-list" id="presetList"></div>
+      </section>
+
+      <section class="builder-section">
+        <div class="b-head"><span>成品尺寸</span><span>CM</span></div>
+        <div class="dim-editor">
+          <label><span>高 H</span><input id="dimH" type="number" min="30" max="60" step="1" /></label>
+          <label><span>宽 W</span><input id="dimW" type="number" min="22" max="40" step="1" /></label>
+          <label><span>厚 D</span><input id="dimD" type="number" min="10" max="28" step="1" /></label>
+        </div>
+        <p class="scale-note">3D 按整体比例预览；纸格按输入尺寸重算，五金需按标准件复核。</p>
+      </section>
+
+      <section class="builder-section">
+        <div class="b-head"><span>结构</span><span>FEATURES</span></div>
+        <div class="toggle-list" id="toggleList"></div>
+      </section>
+
+      <section class="builder-section">
+        <div class="b-head"><span>配色 / 面料</span><span id="colorName">GRAPHITE</span></div>
+        <div class="swatch-row" id="swatchRow"></div>
+        <div class="material-line" id="materialLine">NYLON 600D · 210D LINING</div>
+      </section>
+
+      <section class="builder-section">
+        <div class="b-head"><span>参考图 / 纸格</span><span>OPTIONAL</span></div>
+        <label class="upload">
+          <input type="file" id="refInput" accept="image/*" />
+          <span class="upload-ico">＋</span>
+          <span id="refLabel">上传参考照片或纸格截图</span>
+        </label>
+        <div class="ref-preview" id="refPreview" hidden>
+          <img id="refImg" alt="参考图" />
+          <div><span>仅作对照，不参与出格</span><button id="refRemove" type="button">移除</button></div>
+        </div>
+      </section>
+
+      <p class="builder-disclaimer">视觉级数字样 · 纸格 DRAFT v0.1。1:1 SVG/DXF 可下载；生产前需版师复核纸格、缝份与五金。</p>
+      </div>
+    </aside>
+
+    <section class="work">
+      <div class="work-top">
+        <div class="work-title">
+          <span class="work-code" id="workCode">CM-01</span>
+          <h2 id="workName">城市通勤双肩包</h2>
+          <span class="work-meta" id="workMeta">43 × 32 × 18 cm</span>
+        </div>
+        <div class="view-tools" id="viewTools">
+          <button class="view is-active" data-view="iso">45°</button>
+          <button class="view" data-view="front">正面</button>
+          <button class="view" data-view="side">侧面</button>
+          <button class="view" data-view="back">背面</button>
+          <button class="rotate-btn" id="autoRotate" aria-pressed="false" title="自动旋转">↻</button>
+        </div>
+      </div>
+
+      <div class="work-body">
+        <div class="panel model-panel" data-panel="model">
+          <canvas id="scene" aria-label="可旋转的背包 3D 模型"></canvas>
+          <div class="model-status"><span class="pulse"></span><span>REALTIME</span><span class="thin"></span><span id="triStat">—</span></div>
+          <div class="model-hint">拖动旋转 <i>·</i> 滚轮缩放 <i>·</i> 双击复位</div>
+        </div>
+
+        <div class="panel pattern-panel" data-panel="pattern" hidden>
+          <div class="pattern-toolbar">
+            <label class="check"><input type="checkbox" id="seamToggle" checked /><span>显示净样 / 缝份</span></label>
+            <span class="pattern-note">1:5 REVIEW · SA 1.0 cm · 1:1 SVG / DXF</span>
+            <div class="pattern-actions">
+              <button id="downloadPatternPng">PNG</button>
+              <button id="downloadPattern">1:1 SVG</button>
+              <button id="downloadPatternDxf">DXF</button>
+            </div>
+          </div>
+          <div class="pattern-canvas" id="patternHost"></div>
+          <div class="reference-float" id="referenceFloat" hidden>
+            <img id="referenceFloatImg" alt="参考图" />
+            <span>REFERENCE / 参考图</span>
+          </div>
+        </div>
+
+        <div class="panel bom-panel" data-panel="bom" hidden>
+          <div class="bom-top">
+            <div>
+              <p class="b-kicker"><span>MATERIAL SNAPSHOT</span><span id="bomCode">CM-01</span></p>
+              <h3>物料概要 <em>按外形估算</em></h3>
+            </div>
+            <div class="bom-stats" id="bomStats"></div>
+          </div>
+          <div class="bom-table-wrap" id="bomHost"></div>
+          <div class="bom-foot">
+            <p>用量按外形与结构估算，未计损耗、工艺与人工；不是报价单，也不替代工厂 BOM。</p>
+            <button id="downloadBom">导出 BOM CSV</button>
+          </div>
+        </div>
+
+        <div class="panel tech-panel" data-panel="tech" hidden>
+          <div class="pattern-toolbar tech-toolbar">
+            <div class="tech-switch" role="group" aria-label="工艺单页">
+              <button class="tech-page is-active" data-techpage="instruction">工艺单</button>
+              <button class="tech-page" data-techpage="technical">技术表</button>
+            </div>
+            <span class="tech-badge">INDUSTRIAL / REV A</span>
+            <span class="pattern-note">A3 · 1:6 · 工艺单 / TECH PACK</span>
+            <div class="pattern-actions">
+              <button id="downloadTechPng">PNG</button>
+              <button id="downloadTechSvg">SVG</button>
+              <button id="downloadTechPdf">PDF</button>
+            </div>
+          </div>
+          <div class="pattern-canvas tech-canvas" id="techHost"></div>
+        </div>
+      </div>
+
+      <footer class="work-foot">
+        <div class="spec-chips" id="specChips"></div>
+        <div class="foot-right"><span class="tiny-dot"></span><span id="footNote">视觉级 · 非开料</span></div>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="loading" id="loading">
+    <div class="loading-mark">i2GO</div>
+    <div class="loading-text">正在构建数字样…</div>
+    <div class="loading-bar"><i></i></div>
+  </div>
+  <div class="webgl-error" id="webglError" hidden><b>当前浏览器无法启动 WebGL</b><span>请使用最新版 Chrome / Edge / Safari。</span></div>
+
+  <script type="module" src="./src/studio.js"></script>
+</body>
+</html>

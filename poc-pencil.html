@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="Pattern-driven 3D POC 02：用 VLOTHO vanity-case 6 片纸格，按 235 × 115 × 70 mm 重算笔袋结构。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b1c1b'/%3E%3Ctext x='32' y='40' font-family='Arial' font-size='21' font-weight='700' fill='%23f4f1ea' text-anchor='middle'%3Ei2GO%3C/text%3E%3C/svg%3E" />
+  <title>i2GO / Pattern Lab · Pencil Case POC</title>
+  <link rel="stylesheet" href="./styles-poc.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+</head>
+<body class="poc-body">
+  <header class="poc-header">
+    <div class="poc-brand">
+      <a href="./" class="poc-logo">i2GO</a>
+      <span class="poc-div"></span>
+      <span class="poc-title">PATTERN LAB</span>
+      <span class="poc-badge">POC 02</span>
+    </div>
+    <div class="poc-meta">PENCIL CASE / 235 × 115 × 70 mm / 10-PIECE DRAFT / SA 10 mm</div>
+    <div class="poc-actions">
+      <a href="./poc.html">← Rolltop POC</a>
+      <a href="./studio.html">返回打样台</a>
+      <a href="./exports/PENCIL-01_pattern.dxf" download>1:1 DXF</a>
+      <a class="primary" href="./exports/PENCIL-01_pattern_A3.pdf" download>A3 纸格</a>
+    </div>
+  </header>
+
+  <main class="poc-main">
+    <section class="poc-viewer">
+      <canvas id="scene" aria-label="纸格驱动的笔袋 3D 模型"></canvas>
+      <div class="poc-view-top">
+        <div class="poc-live"><span class="pulse"></span> PATTERN → 3D</div>
+        <div class="poc-views">
+          <button class="view is-active" data-view="iso">45°</button>
+          <button class="view" data-view="front">正面</button>
+          <button class="view" data-view="side">侧面</button>
+          <button class="view" data-view="back">背面</button>
+          <button class="rotate" id="rotate" title="自动旋转">↻</button>
+        </div>
+      </div>
+      <div class="poc-view-bottom">
+        <span>拖动旋转 · 滚轮缩放 · 双击复位</span>
+        <span id="triStat">—</span>
+      </div>
+      <div class="poc-warning">POC 02 · NOT i2GO · PRINT PLACEHOLDER</div>
+    </section>
+
+    <aside class="poc-pattern">
+      <div class="poc-p-head">
+        <div><span class="poc-kicker">DRAFT PATTERN v0.1</span><h1>笔袋 POC：235×115×70 / 10 片草稿</h1></div>
+        <span class="poc-source">VLOTHO CAD</span>
+      </div>
+      <div class="poc-p-img">
+        <img src="./patterns/vlotho/vanity-case_pattern.svg" alt="VLOTHO vanity-case 纸格 SVG" />
+      </div>
+      <div class="poc-p-cap">源纸格 6 片 / 1:1；PENCIL-01 草稿 10 片（6 outer + 2 lining + 2 piping）见下方下载</div>
+      <div class="poc-p-meta">
+        <div><span>纸格来源</span><b>VLOTHO CAD / vanity case</b></div>
+        <div><span>源片数</span><b>6 片</b></div>
+        <div><span>草稿片数</span><b>10 片 / SA 10 mm</b></div>
+        <div><span>POC 成品</span><b>235 × 115 × 70 mm</b></div>
+        <div><span>纸格单位</span><b>1:1 / mm</b></div>
+        <div><span>3D 状态</span><b>管线原型 / 非量产</b></div>
+      </div>
+      <div class="poc-p-notes">
+        <p><b>这版证明什么：</b>底/盖 235×70、围 590×72、盖圈 590×43、铰链 120×50、提手 180×20，按 10 mm 缝份重算；1:1 SVG/DXF + A3 审阅图已出，3D 直接按这套尺寸拼。</p>
+        <p><b>这版不证明什么：</b>不是 i2GO 产品，不是 Ghostbusters 授权印刷；表面是替代 print，不是客户图；没有真实面料/五金扫描、缝制仿真和版师签核。</p>
+        <p><b>License：</b>VLOTHO 的 trial pattern，仅用于内部管线验证；商用/再分发前需确认授权。详见 <a href="./patterns/vlotho/README.md">patterns README</a>。</p>
+      </div>
+      <div class="poc-p-links">
+        <a href="./exports/PENCIL-01_pattern_A3.pdf" download>A3 纸格 PDF</a>
+        <a href="./exports/PENCIL-01_pattern_1to1.svg" download>1:1 SVG</a>
+        <a href="./exports/PENCIL-01_pattern.dxf" download>1:1 DXF</a>
+        <a href="./exports/PENCIL-01_BOM.csv" download>BOM CSV</a>
+        <a href="./patterns/vlotho/vanity-case_pattern.svg" target="_blank">源纸格 SVG</a>
+      </div>
+    </aside>
+  </main>
+
+  <div class="loading" id="loading">
+    <div class="loading-mark">i2GO</div>
+    <div class="loading-text">正在按纸格拼装 3D…</div>
+    <div class="loading-bar"><i></i></div>
+  </div>
+  <div class="webgl-error" id="webglError" hidden><b>当前浏览器无法启动 WebGL</b><span>请使用最新版 Chrome / Edge / Safari。</span></div>
+
+  <script type="module" src="./src/poc-pencil.js"></script>
+</body>
+</html>

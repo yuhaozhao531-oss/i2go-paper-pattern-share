@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400mm" height="900mm" viewBox="0 0 1400 900">
+    <rect width="100%" height="100%" fill="#fffdf8"/>
+    <g><path d="M 193 740
+    H 527
+    Q 530 740 530 737
+    L 518.1 293
+    Q 360 288.95 201.9 293
+    L 190 737
+    Q 190 740 193 740 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 203 730
+    H 517
+    Q 520 730 520 727
+    L 508.8 303
+    Q 360 298.95 211.2 303
+    L 200 727
+    Q 200 730 203 730 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="208" y="318" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P01 · FRONT PANEL / 前幅</text>
+      <text x="208" y="331" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 34 × 45 cm · FIN 32 × 43 · QTY 1</text>
+      <line x1="360" y1="407.5" x2="360" y2="622.5" stroke="#a53d31" stroke-width=".5"/>
+      <text x="366" y="515" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 366 515)">GRAIN</text>
+    </g><g><path d="M 3593 740
+    H 3927
+    Q 3930 740 3930 737
+    L 3918.1 293
+    Q 3760 288.95 3601.9 293
+    L 3590 737
+    Q 3590 740 3593 740 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 3603 730
+    H 3917
+    Q 3920 730 3920 727
+    L 3908.8 303
+    Q 3760 298.95 3611.2 303
+    L 3600 727
+    Q 3600 730 3603 730 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="3608" y="318" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P02 · BACK PANEL / 后幅</text>
+      <text x="3608" y="331" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 34 × 45 cm · FIN 32 × 43 · QTY 1</text>
+      <line x1="3760" y1="407.5" x2="3760" y2="622.5" stroke="#a53d31" stroke-width=".5"/>
+      <text x="3766" y="515" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 3766 515)">GRAIN</text>
+    </g><g><path d="M 6992.4 290 H 7187.6 Q 7190 290 7190 292.4 V 737.6 Q 7190 740 7187.6 740 H 6992.4 Q 6990 740 6990 737.6 V 292.4 Q 6990 290 6992.4 290 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 7002.4 300 H 7177.6 Q 7180 300 7180 302.4 V 727.6 Q 7180 730 7177.6 730 H 7002.4 Q 7000 730 7000 727.6 V 302.4 Q 7000 300 7002.4 300 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="7008" y="318" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P03 · GUSSET / 侧围</text>
+      <text x="7008" y="331" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 20 × 45 cm · FIN 18 × 43 · QTY 2</text>
+      <line x1="7090" y1="407.5" x2="7090" y2="622.5" stroke="#a53d31" stroke-width=".5"/>
+      <text x="7096" y="515" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 7096 515)">GRAIN</text>
+    </g><g><path d="M 192.4 5190 H 527.6 Q 530 5190 530 5192.4 V 5387.6 Q 530 5390 527.6 5390 H 192.4 Q 190 5390 190 5387.6 V 5192.4 Q 190 5190 192.4 5190 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 202.4 5200 H 517.6 Q 520 5200 520 5202.4 V 5377.6 Q 520 5380 517.6 5380 H 202.4 Q 200 5380 200 5377.6 V 5202.4 Q 200 5200 202.4 5200 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="208" y="5218" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P04 · BOTTOM / 底幅</text>
+      <text x="208" y="5231" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 34 × 20 cm · FIN 32 × 18 · QTY 1</text>
+      <line x1="360" y1="5245" x2="360" y2="5335" stroke="#a53d31" stroke-width=".5"/>
+      <text x="366" y="5290" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 366 5290)">GRAIN</text>
+    </g><g><path d="M 8992.4 290 H 9238 Q 9240.4 290 9240.4 292.4 V 582.8000000000001 Q 9240.4 585.2 9238 585.2 H 8992.4 Q 8990 585.2 8990 582.8000000000001 V 292.4 Q 8990 290 8992.4 290 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 9002.4 300 H 9228 Q 9230.4 300 9230.4 302.4 V 572.8000000000001 Q 9230.4 575.2 9228 575.2 H 9002.4 Q 9000 575.2 9000 572.8000000000001 V 302.4 Q 9000 300 9002.4 300 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="9008" y="318" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P05 · FRONT POCKET / 前袋</text>
+      <text x="9008" y="331" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 25 × 30 cm · FIN 23 × 28 · QTY 1</text>
+      <line x1="9115.2" y1="368.8" x2="9115.2" y2="506.4" stroke="#a53d31" stroke-width=".5"/>
+      <text x="9121.2" y="437.6" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 9121.2 437.6)">GRAIN</text>
+    </g><g><path d="M 10992.4 290 H 11276.4 Q 11278.8 290 11278.8 292.4 V 634.4 Q 11278.8 636.8 11276.4 636.8 H 10992.4 Q 10990 636.8 10990 634.4 V 292.4 Q 10990 290 10992.4 290 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 11002.4 300 H 11266.4 Q 11268.8 300 11268.8 302.4 V 624.4 Q 11268.8 626.8 11266.4 626.8 H 11002.4 Q 11000 626.8 11000 624.4 V 302.4 Q 11000 300 11002.4 300 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="11008" y="318" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P06 · LAPTOP SLEEVE / 电脑仓</text>
+      <text x="11008" y="331" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 29 × 35 cm · FIN 27 × 33 · QTY 1</text>
+      <line x1="11134.4" y1="381.7" x2="11134.4" y2="545.1" stroke="#a53d31" stroke-width=".5"/>
+      <text x="11140.4" y="463.4" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 11140.4 463.4)">GRAIN</text>
+    </g><g><path d="M 3592.4 5190 H 3827.6 Q 3830 5190 3830 5192.4 V 5252.6 Q 3830 5255 3827.6 5255 H 3592.4 Q 3590 5255 3590 5252.6 V 5192.4 Q 3590 5190 3592.4 5190 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 3602.4 5200 H 3817.6 Q 3820 5200 3820 5202.4 V 5242.6 Q 3820 5245 3817.6 5245 H 3602.4 Q 3600 5245 3600 5242.6 V 5202.4 Q 3600 5200 3602.4 5200 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="3608" y="5218" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P07 · HANDLE / 提手</text>
+      <text x="3608" y="5231" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 24 × 7 cm · FIN 22 × 5 · QTY 1</text>
+      <line x1="3710" y1="5211.25" x2="3710" y2="5233.75" stroke="#a53d31" stroke-width=".5"/>
+      <text x="3716" y="5222.5" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 3716 5222.5)">GRAIN</text>
+    </g><g><path d="M 4992.4 5190 H 5627.6 Q 5630 5190 5630 5192.4 V 5272.6 Q 5630 5275 5627.6 5275 H 4992.4 Q 4990 5275 4990 5272.6 V 5192.4 Q 4990 5190 4992.4 5190 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 5002.4 5200 H 5617.6 Q 5620 5200 5620 5202.4 V 5262.6 Q 5620 5265 5617.6 5265 H 5002.4 Q 5000 5265 5000 5262.6 V 5202.4 Q 5000 5200 5002.4 5200 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="5008" y="5218" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P08 · SHOULDER STRAP / 肩带</text>
+      <text x="5008" y="5231" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 64 × 9 cm · FIN 62 × 7 · QTY 2</text>
+      <line x1="5310" y1="5216.25" x2="5310" y2="5248.75" stroke="#a53d31" stroke-width=".5"/>
+      <text x="5316" y="5232.5" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 5316 5232.5)">GRAIN</text>
+    </g><g><path d="M 202.4 7000 H 597.6 Q 600 7000 600 7002.4 V 7021.6 Q 600 7024 597.6 7024 H 202.4 Q 200 7024 200 7021.6 V 7002.4 Q 200 7000 202.4 7000 Z" fill="#fffdf8" stroke="#1e1f1c" stroke-width=".6"/><path d="M 202.4 7000 H 597.6 Q 600 7000 600 7002.4 V 7021.6 Q 600 7024 597.6 7024 H 202.4 Q 200 7024 200 7021.6 V 7002.4 Q 200 7000 202.4 7000 Z" fill="none" stroke="#8b8477" stroke-width=".45" stroke-dasharray="5 4"/>
+      <text x="208" y="7018" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600">P09 · ZIP TAPE / 拉链带</text>
+      <text x="208" y="7031" font-family="Arial, Helvetica, sans-serif" font-size="6.5" fill="#6d675c">CUT 40 × 2 cm · FIN 40 × 2 · QTY 1</text>
+      <line x1="400" y1="7006" x2="400" y2="7018" stroke="#a53d31" stroke-width=".5"/>
+      <text x="406" y="7012" font-family="Arial, Helvetica, sans-serif" font-size="5" fill="#a53d31" transform="rotate(-90 406 7012)">GRAIN</text>
+    </g>
+    <rect x="20" y="780" width="1360" height="100" fill="none" stroke="#1e1f1c" stroke-width=".6"/>
+    <text x="34" y="810" font-family="Arial, Helvetica, sans-serif" font-size="6" font-weight="700">i2GO · PAPER PATTERN DRAFT v0.1 · CM-01 · 32 × 43 × 18 cm cm · SA 1.0 cm · 1:1 mm</text>
+    <text x="34" y="824" font-family="Arial, Helvetica, sans-serif" font-size="4.5" fill="#8a3b2f">DRAFT — pattern maker must verify seam allowance, notches, zipper length and hardware before cutting. Not a signed production pattern.</text>
+    <text x="34" y="838" font-family="Arial, Helvetica, sans-serif" font-size="4" fill="#6d675c">LAYERS: CUT / STITCH / NOTCH / GRAIN · UNITS: mm · 2026-11-11</text>
+  </svg>

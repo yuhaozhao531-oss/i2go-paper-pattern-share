@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="i2GO 城市通勤背包 · 1:1 三维数字样机，可旋转、查看分仓结构并导出 GLB。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b1c1b'/%3E%3Ctext x='32' y='40' font-family='Arial' font-size='21' font-weight='700' fill='%23f4f1ea' text-anchor='middle'%3Ei2GO%3C/text%3E%3C/svg%3E" />
+  <title>i2GO / 城市通勤背包 · 三维数字样</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="i2GO 三维数字样">
+        <span class="brand-word">i2GO</span><span class="brand-reg">®</span>
+      </a>
+      <div class="top-meta">
+        <span>COMMUTER PACK</span>
+        <span class="slash">/</span>
+        <span>数字样 01</span>
+      </div>
+      <div class="top-right">
+        <span class="live"><i></i>REALTIME 3D</span>
+        <span class="top-year">2026</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="intro" aria-labelledby="hero-title">
+        <div class="intro-scroll">
+          <p class="eyebrow"><span>OBJECT 01</span><span>城市通勤系列</span></p>
+          <h1 id="hero-title">城市通勤<br /><em>双肩背包</em></h1>
+          <p class="subline">43 × 32 × 18 cm <span>/</span> NYLON 600D <span>/</span> 18 L</p>
+          <p class="lede">
+            按参考样包重建的可交互三维数字样。比例、分仓、拉链与背负结构均按 1:1 建模，
+            用于在打样之前看清结构与用料关系。
+          </p>
+
+          <div class="spec-row" aria-label="主要尺寸">
+            <div class="spec"><b>43</b><span>高度 <i>cm</i></span></div>
+            <div class="spec"><b>32</b><span>宽度 <i>cm</i></span></div>
+            <div class="spec"><b>18</b><span>厚度 <i>cm</i></span></div>
+          </div>
+
+          <a class="studio-cta" href="./studio.html">
+            <span class="studio-cta-copy"><b>数字打样台 · 工业版</b><small>一句话建模 · 纸格 / 工艺单 / BOM</small></span>
+            <span class="studio-cta-arrow">→</span>
+          </a>
+
+          <div class="section-label structure-label"><span>结构索引</span><span>06 PARTS</span></div>
+          <div class="feature-list" id="featureList">
+            <button class="feature" data-feature="front">
+              <span class="num">01</span>
+              <span class="feature-copy"><b>前袋分区</b><small>2 插袋 · 2 笔位 · 抓绒袋</small></span>
+              <span class="arrow">↗</span>
+            </button>
+            <button class="feature" data-feature="main">
+              <span class="num">02</span>
+              <span class="feature-copy"><b>中袋全开</b><small>双拉头 · 全开取物</small></span>
+              <span class="arrow">↗</span>
+            </button>
+            <button class="feature" data-feature="laptop">
+              <span class="num">03</span>
+              <span class="feature-copy"><b>独立电脑仓</b><small>加厚衬垫 · 弹力固定带</small></span>
+              <span class="arrow">↗</span>
+            </button>
+            <button class="feature" data-feature="harness">
+              <span class="num">04</span>
+              <span class="feature-copy"><b>减压肩带</b><small>网布贴合 · 可调胸扣</small></span>
+              <span class="arrow">↗</span>
+            </button>
+            <button class="feature" data-feature="back">
+              <span class="num">05</span>
+              <span class="feature-copy"><b>透气背板</b><small>三通道泡棉 · 拉杆带</small></span>
+              <span class="arrow">↗</span>
+            </button>
+            <button class="feature" data-feature="fabric">
+              <span class="num">06</span>
+              <span class="feature-copy"><b>面料与五金</b><small>尼龙 600D · 反穿拉链</small></span>
+              <span class="arrow">↗</span>
+            </button>
+          </div>
+
+          <div class="section-label"><span>配色样</span><span id="colorName">GRAPHITE</span></div>
+          <div class="swatches" id="swatches" role="group" aria-label="配色">
+            <button class="swatch" data-color="graphite" style="--sw:#4b4d50" aria-label="石墨灰"></button>
+            <button class="swatch" data-color="obsidian" style="--sw:#2a2c2f" aria-label="曜石黑"></button>
+            <button class="swatch" data-color="olive" style="--sw:#4a5046" aria-label="苔原绿"></button>
+            <button class="swatch" data-color="sand" style="--sw:#928d82" aria-label="砂岩"></button>
+            <span class="swatch-label" id="swatchLabel">石墨灰 / 橄榄背板</span>
+          </div>
+
+          <p class="disclaimer">
+            展示模型 · 纸格 DRAFT v0.1。3D 用于视觉确认，1:1 DXF 需版师复核。
+          </p>
+        </div>
+      </section>
+
+      <section class="stage" id="stage" aria-label="背包三维视图">
+        <canvas id="scene" aria-label="可旋转的背包 3D 模型"></canvas>
+
+        <div class="stage-top">
+          <div class="stage-status">
+            <span class="pulse"></span>
+            <span>实时渲染</span>
+            <span class="stage-divider"></span>
+            <span id="triCount">—</span>
+          </div>
+          <div class="view-switch" role="group" aria-label="视角">
+            <button class="view is-active" data-view="iso">45°</button>
+            <button class="view" data-view="front">正面</button>
+            <button class="view" data-view="side">侧面</button>
+            <button class="view" data-view="back">背面</button>
+          </div>
+        </div>
+
+        <div class="hotspots" id="hotspots" aria-hidden="true"></div>
+
+        <aside class="feature-card" id="featureCard" hidden>
+          <button class="card-close" id="cardClose" aria-label="关闭">×</button>
+          <p class="card-kicker"><span id="cardNo">01</span><span id="cardSub">FRONT ORGANIZER</span></p>
+          <h2 id="cardTitle">前袋分区</h2>
+          <p id="cardDesc"></p>
+          <div class="card-chips" id="cardChips"></div>
+          <button class="card-action" id="cardAction">展开查看 <span>↗</span></button>
+        </aside>
+
+        <div class="stage-caption">
+          <span class="caption-index">01</span>
+          <span class="caption-line"></span>
+          <span class="caption-copy">DIGITAL SAMPLE<br /><b>1:1 SCALE</b></span>
+        </div>
+
+        <div class="toolbar" role="toolbar" aria-label="模型工具">
+          <button class="tool" data-action="rotate" aria-pressed="false" title="自动旋转">
+            <span class="tool-ico">↻</span><span>自动旋转</span>
+          </button>
+          <button class="tool" data-action="explode" aria-pressed="false" title="结构分解">
+            <span class="tool-ico">⌁</span><span>结构分解</span>
+          </button>
+          <button class="tool" data-action="labels" aria-pressed="false" title="显示部件标注">
+            <span class="tool-ico">◎</span><span>部件标注</span>
+          </button>
+          <button class="tool" data-action="dims" aria-pressed="false" title="显示尺寸">
+            <span class="tool-ico">↔</span><span>尺寸</span>
+          </button>
+          <span class="tool-sep"></span>
+          <button class="tool tool-export" data-action="glb" title="导出 GLB 模型">
+            <span class="tool-ico">↓</span><span>导出 GLB</span>
+          </button>
+        </div>
+
+        <div class="stage-foot">
+          <span>拖动旋转 <i>·</i> 滚轮缩放 <i>·</i> 双击复位</span>
+          <span id="viewName">ISO / 45°</span>
+        </div>
+
+        <div class="loading" id="loading">
+          <div class="loading-mark">i2GO</div>
+          <div class="loading-text">正在构建三维数字样…</div>
+          <div class="loading-bar"><i></i></div>
+        </div>
+
+        <div class="webgl-error" id="webglError" hidden>
+          <b>当前浏览器无法启动 WebGL</b>
+          <span>请使用最新版 Chrome / Edge / Safari 打开。</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
